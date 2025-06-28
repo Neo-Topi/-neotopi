@@ -4,27 +4,83 @@
   <meta charset="UTF-8" />
   <title>ネオトピ - NeoTopi</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="rss.js" defer></script>
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(div => div.style.display = 'none');
+      document.getElementById(tabId).style.display = 'block';
+    }
+    window.onload = () => showTab('kabu');
+  </script>
 </head>
 <body>
   <header>
     <h1>ネオトピ - NeoTopi</h1>
     <nav>
       <ul>
-        <li>トップ</li>
-        <li>株</li>
-        <li>炎上</li>
-        <li>SNS</li>
-        <li>天気</li>
+        <li onclick="showTab('kabu')">株</li>
+        <li onclick="showTab('enjo')">炎上</li>
+        <li onclick="showTab('seiji')">政治</li>
+        <li onclick="showTab('kokusai')">国際</li>
+        <li onclick="showTab('tenki')">天気・災害</li>
+        <li onclick="showTab('btc')">ビットコイン</li>
+        <li onclick="showTab('nikkei')">日経平均</li>
+        <li onclick="showTab('war')">戦争</li>
+        <li onclick="showTab('nasdaq')">NASDAQ100</li>
+        <li onclick="showTab('nvidia')">NVIDIA</li>
+        <li onclick="showTab('sp500')">S&P500</li>
       </ul>
     </nav>
   </header>
+
   <main>
     <section>
-      <h2>最新のニュース</h2>
-      <div id="rss-feed">読み込み中...</div>
+      <div id="kabu" class="tab-content">
+        <h2>株ニュース</h2>
+        <iframe src="https://feed.mikle.com/widget/v2/191399/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div id="enjo" class="tab-content">
+        <h2>炎上・話題ニュース</h2>
+        <iframe src="https://feed.mikle.com/widget/v2/191401/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div id="seiji" class="tab-content">
+        <h2>政治</h2>
+        <iframe src="https://feed.mikle.com/widget/v2/191403/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div id="kokusai" class="tab-content">
+        <h2>国際</h2>
+        <iframe src="https://feed.mikle.com/widget/v2/191405/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div id="tenki" class="tab-content">
+        <h2>天気・災害</h2>
+        <iframe src="https://feed.mikle.com/widget/v2/191407/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div id="btc" class="tab-content">
+        <h2>ビットコイン（ドル建て）</h2>
+        <iframe src="https://feed.mikle.com/widget/v2/191409/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div id="nikkei" class="tab-content">
+        <h2>日経平均</h2>
+        <iframe src="https://feed.mikle.com/widget/v2/191411/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div id="war" class="tab-content">
+        <h2>戦争・紛争</h2>
+        <iframe src="https://feed.mikle.com/widget/v2/191413/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div id="nasdaq" class="tab-content">
+        <h2>NASDAQ100</h2>
+        <iframe src="https://feed.mikle.com/widget/v2/191415/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div id="nvidia" class="tab-content">
+        <h2>NVIDIA関連</h2>
+        <iframe src="https://feed.mikle.com/widget/v2/191417/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div id="sp500" class="tab-content">
+        <h2>S&P500</h2>
+        <iframe src="https://feed.mikle.com/widget/v2/191419/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
+      </div>
     </section>
   </main>
+
   <footer>
     <p>© 2025 ネオトピ</p>
   </footer>

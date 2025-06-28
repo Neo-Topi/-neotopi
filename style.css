@@ -2,7 +2,9 @@
 body { font-family: sans-serif; margin: 0; background: #f4f4f4; color: #333; }
 header { background: #00264d; color: white; padding: 1em; }
 header h1 { margin: 0; }
-nav ul { list-style: none; display: flex; padding: 0; margin: 0; }
-nav li { margin-right: 1em; }
+nav ul { list-style: none; display: flex; flex-wrap: wrap; padding: 0; margin: 0; background: #003366; }
+nav li { margin: 0.5em; padding: 0.5em 1em; background: #004080; color: white; cursor: pointer; border-radius: 4px; }
+nav li:hover { background: #0055aa; }
 main { padding: 1em; }
 footer { background: #ccc; text-align: center; padding: 1em; margin-top: 2em; }
+.tab-content { display: none; }
