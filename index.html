@@ -1,88 +1,73 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <title>ネオトピ - NeoTopi</title>
-  <link rel="stylesheet" href="style.css" />
-  <script>
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(div => div.style.display = 'none');
-      document.getElementById(tabId).style.display = 'block';
-    }
-    window.onload = () => showTab('kabu');
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoTopi - 足立区ニュースポータル</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #005bac;
+            color: white;
+            padding: 10px 20px;
+            font-size: 24px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .widget {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            min-height: 200px;
+        }
+        iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+        h2 {
+            font-size: 18px;
+            margin: 0 0 10px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>ネオトピ - NeoTopi</h1>
-    <nav>
-      <ul>
-        <li onclick="showTab('kabu')">株</li>
-        <li onclick="showTab('enjo')">炎上</li>
-        <li onclick="showTab('seiji')">政治</li>
-        <li onclick="showTab('kokusai')">国際</li>
-        <li onclick="showTab('tenki')">天気・災害</li>
-        <li onclick="showTab('btc')">ビットコイン</li>
-        <li onclick="showTab('nikkei')">日経平均</li>
-        <li onclick="showTab('war')">戦争</li>
-        <li onclick="showTab('nasdaq')">NASDAQ100</li>
-        <li onclick="showTab('nvidia')">NVIDIA</li>
-        <li onclick="showTab('sp500')">S&P500</li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section>
-      <div id="kabu" class="tab-content">
-        <h2>株ニュース</h2>
-        <iframe src="https://feed.mikle.com/widget/v2/191399/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
-      </div>
-      <div id="enjo" class="tab-content">
-        <h2>炎上・話題ニュース</h2>
-        <iframe src="https://feed.mikle.com/widget/v2/191401/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
-      </div>
-      <div id="seiji" class="tab-content">
-        <h2>政治</h2>
-        <iframe src="https://feed.mikle.com/widget/v2/191403/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
-      </div>
-      <div id="kokusai" class="tab-content">
-        <h2>国際</h2>
-        <iframe src="https://feed.mikle.com/widget/v2/191405/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
-      </div>
-      <div id="tenki" class="tab-content">
-        <h2>天気・災害</h2>
-        <iframe src="https://feed.mikle.com/widget/v2/191407/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
-      </div>
-      <div id="btc" class="tab-content">
-        <h2>ビットコイン（ドル建て）</h2>
-        <iframe src="https://feed.mikle.com/widget/v2/191409/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
-      </div>
-      <div id="nikkei" class="tab-content">
-        <h2>日経平均</h2>
-        <iframe src="https://feed.mikle.com/widget/v2/191411/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
-      </div>
-      <div id="war" class="tab-content">
-        <h2>戦争・紛争</h2>
-        <iframe src="https://feed.mikle.com/widget/v2/191413/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
-      </div>
-      <div id="nasdaq" class="tab-content">
-        <h2>NASDAQ100</h2>
-        <iframe src="https://feed.mikle.com/widget/v2/191415/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
-      </div>
-      <div id="nvidia" class="tab-content">
-        <h2>NVIDIA関連</h2>
-        <iframe src="https://feed.mikle.com/widget/v2/191417/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
-      </div>
-      <div id="sp500" class="tab-content">
-        <h2>S&P500</h2>
-        <iframe src="https://feed.mikle.com/widget/v2/191419/" height="500" width="100%" frameborder="0" scrolling="no"></iframe>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 ネオトピ</p>
-  </footer>
+    <header>NeoTopi（足立区ニュースポータル）</header>
+    <div class="container">
+        <div class="widget">
+            <h2>足立区の天気（画像）</h2>
+            <img src="https://www.jma.go.jp/bosai/forecast/img/109.png" alt="天気画像" style="width:100%;">
+        </div>
+        <div class="widget">
+            <h2>経済・ビジネス（画像）</h2>
+            <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="173803/"></script>
+        </div>
+        <div class="widget">
+            <h2>ビットコイン（ドル）チャート</h2>
+            <iframe src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_btc&symbol=BITSTAMP%3ABTCUSD&interval=60&hidesidetoolbar=1&symboledit=1&saveimage=1&toolbarbg=F1F3F6&studies=[]&theme=light&style=1&timezone=Asia%2FTokyo&studies_overrides={}&overrides={}" allowfullscreen></iframe>
+        </div>
+        <div class="widget">
+            <h2>ドル円チャート</h2>
+            <iframe src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_usdjpy&symbol=FX%3AUSDJPY&interval=60&hidesidetoolbar=1&theme=light&style=1&timezone=Asia%2FTokyo" allowfullscreen></iframe>
+        </div>
+        <div class="widget">
+            <h2>日経225チャート</h2>
+            <iframe src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_nikkei&symbol=OSE%3ANI225&interval=60&hidesidetoolbar=1&theme=light&style=1&timezone=Asia%2FTokyo" allowfullscreen></iframe>
+        </div>
+        <div class="widget">
+            <h2>金チャート</h2>
+            <iframe src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_gold&symbol=COMEX%3AGC1!&interval=60&hidesidetoolbar=1&theme=light&style=1&timezone=Asia%2FTokyo" allowfullscreen></iframe>
+        </div>
+    </div>
 </body>
 </html>
